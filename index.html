@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Do You Love Me?</title>
+<style>
+body{margin:0;font-family:Poppins,sans-serif;height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(120deg,#ff9a9e,#fad0c4);overflow:hidden;color:#fff}
+.x{position:fixed;bottom:-20px;font-size:20px;animation:up 8s linear infinite;pointer-events:none}
+@keyframes up{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-110vh) scale(1.5);opacity:0}}
+.b{width:340px;min-height:480px;background:rgba(255,192,203,.25);backdrop-filter:blur(15px);border-radius:20px;border:2px solid rgba(255,255,255,.3);text-align:center;padding:20px;box-shadow:0 0 30px rgba(255,105,180,.5);position:relative;overflow:hidden;transition:all .3s ease}
+.z{display:flex;justify-content:center;align-items:center;padding:0;flex-direction:column}
+.q{font-size:1.8rem;font-weight:bold;margin-bottom:10px;text-shadow:2px 2px 10px rgba(0,0,0,.8)}
+.g{width:200px;border-radius:15px;margin-bottom:15px;box-shadow:0 0 15px rgba(255,0,100,.6)}
+button{width:100px;height:40px;border:none;border-radius:20px;cursor:pointer;font-size:1rem;color:#fff;position:absolute;transition:transform .3s ease}
+button:hover{transform:scale(1.05)}
+#y{background:linear-gradient(45deg,#ff4f81,#ff2361);left:40px;bottom:40px}
+#n{background:linear-gradient(45deg,#4facfe,#00f2fe);left:180px;bottom:40px}
+.r{display:none;font-size:1.4rem;font-weight:bold;margin-top:15px;color:#fff;text-shadow:0 0 10px #ff1a75,0 0 20px #ff4d94,0 0 30px #ff66b2;animation:p 1.5s infinite}
+@keyframes p{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+.l{max-width:80%;max-height:80%;border-radius:15px;box-shadow:0 0 15px rgba(255,0,100,.6);opacity:0;transform:scale(.8);transition:all 0.8s ease;display:none}
+.s{opacity:1;transform:scale(1)}
+</style>
+</head>
+<body>
+<script>
+Array.from({length:15}).forEach(_=>{
+    let e=document.createElement("div");
+    e.className="x";
+    Object.assign(e.style,{left:Math.random()*100+"vw",animationDuration:Math.random()*5+5+"s",fontSize:Math.random()*20+20+"px"});
+    e.textContent="💖";
+    document.body.appendChild(e);
+});
+</script>
+<div class="b" id="c">
+    <div class="q" id="t">Do you love me? 💕</div>
+    <img id="q" class="g" src="./1.jpg">
+    <button id="y">Yes</button>
+    <button id="n">No</button>
+    <div class="r" id="r">❤ I love you too! ❤</div>
+    <img id="l" class="l" src="./iloveyou.webp">
+</div>
+<script>
+(()=>{const $=i=>document.getElementById(i),E={c:$("c"),y:$("y"),n:$("n"),t:$("t"),q:$("q"),r:$("r"),l:$("l")},M=()=>{const p=10,X=E.c.clientWidth-E.n.clientWidth-p,Y=E.c.clientHeight-E.n.clientHeight-p-50;Object.assign(E.n.style,{left:Math.random()*(X-p)+p+"px",top:Math.random()*(Y-p)+p+"px"})},K=()=>{[...Array(50)].forEach(_=>{let d=document.createElement("div");Object.assign(d.style,{position:"fixed",left:Math.random()*100+"vw",top:Math.random()*100+"vh",width:"8px",height:"8px",background:`hsl(${Math.random()*360},100%,50%)`,opacity:Math.random(),animation:`f ${Math.random()*3+2}s linear forwards`});document.body.appendChild(d);setTimeout(()=>d.remove(),5e3)})};E.n.onmouseover=E.n.ontouchstart=M;E.y.onclick=()=>{E.c.classList.add("z");[E.t,E.q,E.y,E.n].forEach(e=>e.style.display="none");E.l.style.display="block";requestAnimationFrame(()=>E.l.classList.add("s"));K();setTimeout(()=>E.r.style.display="block",2e3)};let S=document.createElement("style");S.textContent="@keyframes f{to{transform:translateY(100vh) rotate(720deg);opacity:0}}";document.head.appendChild(S)})();
+</script>
+<footer style="position:fixed;bottom:5px;right:10px;font-size:10px;color:white;opacity:.6;">© DarkWinzo</footer>
+</body>
+</html>
